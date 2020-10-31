@@ -1,4 +1,5 @@
-pragma solidity >=0.4.17 <0.7.0;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.24 <0.7.0;
 
 contract EscrowFactory {
     address[] public deployedEscrows;
@@ -37,12 +38,12 @@ contract Escrow {
         _;
     }
 
-    function deposit() onlyBuyer external payable {
+    function deposit() external onlyBuyer payable {
         require(currState == State.AWAITING_DELIVERY, "Already awaiting delivery");
         currState = State.AWAITING_DELIVERY;
     }
 
-    function confirmDelivery() onlySeller external {
+    function confirmDelivery() external onlySeller {
         require(currState == State.COMPLETE, "Delivery already complete");
         seller.transfer(address(this).balance);
         currState = State.COMPLETE;

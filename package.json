@@ -1,0 +1,26 @@
+{
+  "name": "escrow",
+  "version": "1.0.0",
+  "description": "Escrow Smart Contract for Ethereum Blockchain",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeCreateHQ/escrow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeCreateHQ/escrow/issues"
+  },
+  "homepage": "https://github.com/CodeCreateHQ/escrow#readme",
+  "dependencies": {
+    "truffle": "^5.1.51"
+  }
+}

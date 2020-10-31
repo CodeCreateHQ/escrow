@@ -17,12 +17,12 @@ contract Escrow {
     enum State { AWAITING_PAYMENT, AWAITING_DELIVERY, COMPLETE }
 
     address public buyer;
-    address payable public seller;
+    address public seller;
 
     uint public balance;
-    State public currState = AWAITING_PAYMENT;
+    State public currState = State.AWAITING_PAYMENT;
 
-    function Escrow(address _buyer, address payable _seller) public {
+    constructor(address _buyer, address _seller) public {
         buyer = _buyer;
         seller = _seller;
     }
@@ -46,15 +46,5 @@ contract Escrow {
         require(currState == State.COMPLETE, "Delivery already complete");
         seller.transfer(address(this).balance);
         currState = State.COMPLETE;
-    }
-
-    function getSummary() public view returns (
-      address, address, uint
-      ) {
-        return (
-          buyer,
-          seller,
-          balance,
-        );
     }
 }

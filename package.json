@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/CodeCreateHQ/escrow#readme",
   "dependencies": {
-    "truffle": "^5.1.51"
+    "truffle": "^5.7.1"
   }
 }
